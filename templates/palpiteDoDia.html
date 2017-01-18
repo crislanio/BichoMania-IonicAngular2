@@ -1,0 +1,32 @@
+<ion-view title="Palpite do Dia" id="page7" style="background-color:#73F6A6;">
+    <ion-content padding="true" class="has-header">
+        <h4 id="palpiteDoDia-heading3" style="color:#000000;">Milhar: {{milhar}}</h4>
+        <button ng-click="gerarMilhar()" id="palpiteDoDia-button3" class="button button-dark  button-block">Gerar Milhar</button>
+
+        <h4 style="color:#000000;">Centena: {{centena}}</h4>
+        <button ng-click="gerarCentena()" class="button button-dark  button-block">Gerar Centena</button>
+
+        <h4 style="color:#000000;">Dezena: {{dezena}}</h4>
+        <button ng-click="gerarDezena()" class="button button-dark  button-block">Gerar Dezena</button>
+
+        <h4 style="color:#000000;">Duque de Dezenas: {{dezena1}} - {{dezena2}}</h4>
+        <button ng-click="gerarDuqueDezenas()" class="button button-dark  button-block">Gerar Duque de Dezenas</button>
+
+        <h4 style="color:#000000;">Terno de Dezenas: {{dezena11}} - {{dezena22}} - {{dezena33}}</h4>
+        <button ng-click="gerarTernoDezenas()" class="button button-dark  button-block">Gerar Terno de Dezenas</button>
+
+
+        <h4 style="color:#000000;">Grupo: {{grupo}}</h4>
+        <button ng-click="gerarGrupo()" class="button button-dark  button-block">Gerar Grupo</button>
+
+        <h4 style="color:#000000;">Dupla de Grupo: {{grupo1}} - {{grupo2}}</h4>
+        <button ng-click="gerarDuplaGrupo()" class="button button-dark  button-block">Gerar Dupla de Grupo</button>
+
+        <h4 style="color:#000000;">Terno de Grupo: {{grupo11}} - {{grupo22}} - {{grupo33}}</h4>
+        <button ng-click="gerarTernoGrupo()" class="button button-dark  button-block">Gerar Terno de Grupo</button>
+
+        <div id="palpiteDoDia-container1" class="creator-container"></div>
+        <div class="spacer" style="width: 300px; height: 12px;"></div>
+
+    </ion-content>
+</ion-view>

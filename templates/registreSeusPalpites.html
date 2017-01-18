@@ -1,0 +1,79 @@
+<ion-view title="Registre seus Palpites" id="page3" style="background-color:#73F6A6;">
+    <ion-nav-buttons side="left" class="has-header">
+        <button class="button button-icon icon ion-social-usd-outline"></button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <form id="registreSeusPalpites-form1" class="list">
+            <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="pesquisar" placeholder="Nome do Bicho">
+      </label>
+
+        </form>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+<!--
+        <form>
+            <ion-toggle toggle-class="toggle-balanced" ng-click="filtrarContatosFavoritos()" ng-model="favorito">Somente Favoritos</ion-toggle>
+        </form>
+-->
+        <div class="spacer" style="width: 300px; height: 3px;"></div>
+
+        <button class="button button-block button-dark" ng-click="exibirAguarde()">Atualizar Palpites</button>
+
+        <button class="button button-block button-assertive" ng-click="habilitarExclusao()">Excluír</button>
+        <ion-list show-delete="permitirExcluir">
+            <ion-item class="item-icon-left item-icon-right dark" ng-repeat="contato in contatos | filter: pesquisar">
+                <ion-delete-button class="ion-minus-circled" ng-click="excluirContato(contato)"></ion-delete-button>
+
+                {{contato.nome}}<br>
+                <i ng-class="contato.favorito==true?'icon ion-android-favorite' : 'icon ion-heart-broken'"></i>{{contato.telefone}}
+            </ion-item>
+        </ion-list>
+
+        <button id="registreSeusPalpites-button9" style="border-radius:1px 1px 1px 1px;" class="button button-dark  button-block" ng-click="abrirTelaContato()">Novo</button>
+
+
+
+        <script id="contato.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar class="bar bar-header bar-dark">
+                    <h1 class="title">Novo Palpite</h1>
+                </ion-header-bar>
+                <ion-content>
+                    <form class="list" name="meuFormulario">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Nome do Bicho:</span>
+                            <input type="text" placeholder="Nome do Bicho" ng-model="contato.nome">
+                        </label>
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Palpite:</span>
+                            <input type="text" placeholder="Meu Palpite" ng-model="contato.telefone">
+                        </label>
+
+
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Favorito</span>
+                            <label class="toggle">
+                                <input type="checkbox" ng-model="contato.favorito">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </label>
+
+                        <div class="row">
+                            <div class="col col-50">
+                                <a ng-click="cancelarContato()" class="button button-assertive button-block">Cancelar</a>
+                            </div>
+                            <div class="col col-50">
+                                <a ng-click="salvarContato(contato)" ng-disabled="meuFormulario.$invalid" class="button button-dark button-block">Salvar</a>
+                            </div>
+                        </div>
+                    </form>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+
+    </ion-content>
+</ion-view>
